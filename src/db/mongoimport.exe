@@ -1,0 +1,10 @@
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile0.csv --quiet
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile1.csv --quiet
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile2.csv --quiet
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile3.csv --quiet
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile4.csv --quiet
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile5.csv --quiet
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile6.csv --quiet
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile7.csv --quiet
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile8.csv --quiet
+mongoimport -d test -c movies --mode insert --type csv --headerline --file /Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvFile9.csv --quiet
