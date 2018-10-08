@@ -38,12 +38,12 @@ function makeTen(fileNum) {
       obj = {
         id_1: `${i}-${fileNum}-${batch}`,
         movie_title: `${faker.commerce.productName()}`,
-        reviewer: `${faker.name.jobDescriptor()}`,
+        reviewer: `${faker.name.firstName()} ${faker.name.lastName()}`,
         review_title: `${faker.internet.password()}`,
         review: `${faker.lorem.sentence()}`,
         review_date: `${faker.date.past()}`,
         reviews_number: `${i}`,
-        review_viewers: `${Math.floor(Math.random() * 1230913)}`,
+        review_viewers: `${Math.floor(Math.random() * 12913)}`,
         review_likes: `${Math.floor(Math.random() * 10542)}`,
         review_average: `${faker.random.number(5)}`
       };

@@ -16,7 +16,7 @@ class Review extends React.Component {
   }
 
   fetchReview() {
-    console.log('Getting /middle/api/review/1');
+    console.log(`Getting /middle/api/review/1`);
     axios
       .get('/middle/api/review/1')
       .then(results => {
