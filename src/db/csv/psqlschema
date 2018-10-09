@@ -31,5 +31,5 @@ crazyCredits varchar(20),
 connections varchar(20),
 soundtracks text array[3],
 faq text array[6],
-primary key(id, title)
+primary key(id)
 );

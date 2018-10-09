@@ -11,6 +11,9 @@ dist
 # mongodb data
 data
 
+# psql csv forms
+*csvMainFile*
+
 #config
 config.js
 
@@ -64,7 +67,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+ENV.js
 
 # next.js build output
 .next

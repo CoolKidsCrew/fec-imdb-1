@@ -1,19 +1,7 @@
-const mongoose = require('mongoose');
-const config = require('../config/config');
-console.log(config);
-let { host, port, name } = config.db;
+const {PGUSER, PGHOST, PGPASSWORD, PGDATABASE} = require('../../ENV.js');
+const {Pool} = require('pg');
+// const config = require('../config/config');
 
-const connectWithRetry = () => {
-  console.log(`MongoDB connecting with retry after 3 sec to mongodb://${host}:${port}/${name}`);
-  mongoose.connect(`mongodb://${host}:${port}/${name}`)
-    .then(() => console.log(`connected to mongodb instance at mongodb://${host}:${port}/${name}`))
-    .catch(err => {
-      console.log('Connection to mongodb unsuccessful, retry after 3 seconds.');
-      setTimeout(connectWithRetry, 3000);
-    });
-};
-
-connectWithRetry();
 
 // mongoose.connect(`mongodb://${host}:${port}`);
 // mongoose.connect('mongodb://localhost/fMDB');
@@ -22,5 +10,31 @@ connectWithRetry();
 // db.once('open', () => {
 //   console.log(`connected to mongodb instance at mongodb://${host}:${port}/${name}`);
 // });
-
-module.exports = mongoose;
+// PGUSER=postgres \
+// PGHOST=localhost \
+// PGPASSWORD=simple \
+// PGDATABASE=main \
+// PGPORT=5432
+const pool = new Pool({
+  host: 'localhost',
+  user: PGUSER,
+  port: 5432,
+  database: 'postgres',
+  password: PGPASSWORD,
+  max: 50,
+  idleTimeoutMillis: 1000,
+  connectionTimeoutMillis: 1000
+})
+module.exports = {
+  queryCb: async (id, callback) => {
+    let queryStr = `select * from main where id = '${id}'`
+    try {
+      const client = await pool.connect();
+      let result = await client.query(queryStr);
+      callback(null, result);
+      client.release();
+    } catch (err) {
+      callback(err)
+    }    
+  }
+}

@@ -143,11 +143,11 @@ function makeTen(fileNum, cb) {
       csvStream.write(obj);
     }
     // console.log(Date.now() - date);
-    if (Date.now() - date > 3900 && batch < 1000) {
+    if (Date.now() - date > 3900 && batch < 100) {
       csvStream.once("drain", () => {
         thousandstimes(batch + 1);
       });
-    } else if (batch < 1000) {
+    } else if (batch < 100) {
       thousandstimes(batch + 1);
     } else if (Date.now() > 3900){
       csvStream.once('drain', ()=>{

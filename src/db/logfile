@@ -1,9 +1,0 @@
-//First attempt,
-//generate data and insert into db inline. 4gb of memory used, and takes over one hour.
-
-//Second attempt and third attempt,
-//batching generation with insertion using setTimeout to add successive insertions to the event loop.
-//Further refinement of batching and sub batching reduced to 90 seconds,
-
-//Fourth attempt,
-//moving data to csv for mongo import

@@ -1,23 +1,9 @@
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile10.csv' DELIMITER ',' CSV HEADER;
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile11.csv' DELIMITER ',' CSV HEADER;
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile12.csv' DELIMITER ',' CSV HEADER;
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile13.csv' DELIMITER ',' CSV HEADER;
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile14.csv' DELIMITER ',' CSV HEADER;
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile15.csv' DELIMITER ',' CSV HEADER;
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile16.csv' DELIMITER ',' CSV HEADER;
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile17.csv' DELIMITER ',' CSV HEADER;
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile18.csv' DELIMITER ',' CSV HEADER;
-COPY main
-FROM '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csvMainFile19.csv' DELIMITER ',' CSV HEADER;
-
-for x in $(ls csvMainFile*.csv);
-do psql -c "copy main from '/Users/anonymousdev/Documents/hrla/fec-imdb/src/db/csv/csv*' csv" movies; done
+psql --username=postgres -c "\COPY main FROM '\Users\Xcidi\Documents\hrla\fec-imdb-1\src\db\csv\csvMainFile11.csv' DELIMITER ',' CSV HEADER;" &
+psql --username=postgres -c "\COPY main FROM '\Users\Xcidi\Documents\hrla\fec-imdb-1\src\db\csv\csvMainFile12.csv' DELIMITER ',' CSV HEADER;" &
+psql --username=postgres -c "\COPY main FROM '\Users\Xcidi\Documents\hrla\fec-imdb-1\src\db\csv\csvMainFile13.csv' DELIMITER ',' CSV HEADER;" &
+psql --username=postgres -c "\COPY main FROM '\Users\Xcidi\Documents\hrla\fec-imdb-1\src\db\csv\csvMainFile14.csv' DELIMITER ',' CSV HEADER;" &
+psql --username=postgres -c "\COPY main FROM '\Users\Xcidi\Documents\hrla\fec-imdb-1\src\db\csv\csvMainFile15.csv' DELIMITER ',' CSV HEADER;" &
+psql --username=postgres -c "\COPY main FROM '\Users\Xcidi\Documents\hrla\fec-imdb-1\src\db\csv\csvMainFile16.csv' DELIMITER ',' CSV HEADER;" &
+psql --username=postgres -c "\COPY main FROM '\Users\Xcidi\Documents\hrla\fec-imdb-1\src\db\csv\csvMainFile17.csv' DELIMITER ',' CSV HEADER;" &
+psql --username=postgres -c "\COPY main FROM '\Users\Xcidi\Documents\hrla\fec-imdb-1\src\db\csv\csvMainFile18.csv' DELIMITER ',' CSV HEADER;" &
+psql --username=postgres -c "\COPY main FROM '\Users\Xcidi\Documents\hrla\fec-imdb-1\src\db\csv\csvMainFile19.csv' DELIMITER ',' CSV HEADER;"
